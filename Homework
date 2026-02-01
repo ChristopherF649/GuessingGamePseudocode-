@@ -1,8 +1,41 @@
 // Guessing Game Pseudocode: Homework - 1/29/2026 //
 
 //Start
+bool playAgain = true;
 
+WHILE playAgain = true
+{
+  int secretNumber;
+  int guess;
+  int currentAttempts;
+  int maxAttempts;
+  bool hasWon = false;
+  string userInput;
 
+  //Random num generator and pick a number
+  SEED random number
+  secretNumber = RANDOM number between 1 and 100
+
+  OUTPUT "I have picked a number between 1 and 100"
+  OUTPUT "Try to guess the number within 7 attempts or you lose!"
+
+  // Guess loop
+  WHILE currentAttempts < maxAttempts AND hasWon = true
+  {
+    OUTPUT "Enter your guess: "
+    INPUT userInput;
+
+    IF userInput is not a valid int
+    {
+      OUTPUT "Invalid input. Please enter a whole number."
+    }
+    ELSE
+    {
+      guess = convert userInput to int
+      attempts = attempts + 1;
+    }
+  }
+}
 
 
 // End
