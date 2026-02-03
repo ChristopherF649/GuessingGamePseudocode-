@@ -1,6 +1,6 @@
 // Guessing Game Pseudocode: Homework - 1/29/2026 //
 
-//Start
+// Start
 bool playAgain = true;
 
 WHILE playAgain = true
@@ -12,12 +12,12 @@ WHILE playAgain = true
   bool hasWon = false;
   string userInput;
 
-  //Random num generator and pick a number
+  // Random num generator and pick a number
   SEED random number
   secretNumber = RANDOM number between 1 and 100
 
   OUTPUT "I have picked a number between 1 and 100"
-  OUTPUT "Try to guess the number within 7 attempts or you lose!"
+  OUTPUT "Try to guess the number within 7 attempts or you lose."
 
   // Guess loop
   WHILE currentAttempts < maxAttempts AND hasWon = true
@@ -33,9 +33,41 @@ WHILE playAgain = true
     {
       guess = convert userInput to int
       attempts = attempts + 1;
+
+      IF guess < secretNumber
+      {
+        OUTPUT "That number is too low!"
+      }
+      ELSE IF guess < secretNumber
+      {
+        OUTPUT "That number is too high!"
+      }
+      ELSE
+      {
+        hasWon = true
+      }
     }
   }
-}
 
+  // Show user game result
+    IF hasWon == trie
+    {
+      OUTPUT "You win! You guessed the correct number in " + attempts + " attempts."
+    }
+    ELSE
+    {
+      OUTPUT "You lose! The correct number was " + secretNumber + "."
+    }
+
+  // Allow player to replay
+  OUTPUT "WAnt to play again? Type "yes" to play again or "no" to exit
+
+    IF userInput != "yes"
+    {
+      playAgain = false;
+    }
+
+OUTPUT "Thanks for playing!"
+}
 
 // End
