@@ -1,6 +1,9 @@
+-- By Christopher Flores
+-- Started 2/12/2026 
+-- This program completes 5 different tasks using Lua.
 
--- First task: Convert a string to uppercase
---[[print("Please enter some words: ")
+--[[-- First task: Convert a string to uppercase
+print("Please enter some words: ")
 someWords = io.read()
 print(string.upper(someWords))
 
@@ -67,7 +70,7 @@ while continueVar == "yes" do
     print("The random number between 0 and " .. maxNumber .. " is: " .. randomNumber)
     print("Do you want to play again? (yes/no): ")
     continueVar = io.read()
-end]]--
+end
 
 -- Fifth Task: Get a random number from the user, if the number is even print "Even", if the number is odd print "Odd".
 -- Do this 10 times and keep track of how many even and odd numbers were entered, print how many times it was even and how many times it was odd at the end.
@@ -92,4 +95,4 @@ for i = 1, 10 do
 end
 
 print("The number of even numbers entered is: " .. evenCount)
-print("The number of odd numbers entered is: " .. oddCount)
+print("The number of odd numbers entered is: " .. oddCount)]]--
