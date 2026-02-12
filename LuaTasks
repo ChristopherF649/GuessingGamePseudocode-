@@ -1,6 +1,6 @@
 
 -- First task: Convert a string to uppercase
-print("Please enter some words: ")
+--[[print("Please enter some words: ")
 someWords = io.read()
 print(string.upper(someWords))
 
@@ -49,3 +49,47 @@ if count > 0 then
 else
     print("No valid numbers were entered.")
 end
+
+-- Fourth Task: User will define a random number, print out a random number between 0 and the user defined number. 
+-- Handle invalid input and have the user play again or exit the program.
+continueVar = "yes"
+math.randomseed(os.time()) -- Seed the random number generator
+math.random(); math.random(); math.random() -- Discard the first few random numbers for better randomness
+
+while continueVar == "yes" do
+    print ("Enter a maximum number: ")
+    maxNumber = tonumber(io.read())
+    while maxNumber == nil do
+        print("Invalid input. Please enter a valid positive number: ")
+        maxNumber = tonumber(io.read())
+    end
+    randomNumber = math.random(0, maxNumber)
+    print("The random number between 0 and " .. maxNumber .. " is: " .. randomNumber)
+    print("Do you want to play again? (yes/no): ")
+    continueVar = io.read()
+end]]--
+
+-- Fifth Task: Get a random number from the user, if the number is even print "Even", if the number is odd print "Odd".
+-- Do this 10 times and keep track of how many even and odd numbers were entered, print how many times it was even and how many times it was odd at the end.
+evenCount = 0
+oddCount = 0
+
+for i = 1, 10 do
+    print("Enter a number: ")
+    num = tonumber(io.read())
+    while num == nil do
+        print("Invalid input. Please enter a valid number: ")
+        num = tonumber(io.read())
+    end
+
+    if num % 2 == 0 then
+        print("Even")
+        evenCount = evenCount + 1
+    else
+        print("Odd")
+        oddCount = oddCount + 1
+    end
+end
+
+print("The number of even numbers entered is: " .. evenCount)
+print("The number of odd numbers entered is: " .. oddCount)

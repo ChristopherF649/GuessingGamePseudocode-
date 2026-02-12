@@ -1,4 +1,4 @@
-// Guessing Game Pseudocode: Homework - 1/29/2026 //
+// Guessing Game Pseudocode in Lua: Homework - 1/29/2026 //
 
 // Start
 bool playAgain = true;
