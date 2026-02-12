@@ -20,7 +20,7 @@ WHILE playAgain = true
   OUTPUT "Try to guess the number within 7 attempts or you lose."
 
   // Guess loop
-  WHILE currentAttempts < maxAttempts AND hasWon = true
+  WHILE currentAttempts < maxAttempts AND hasWon = false
   {
     OUTPUT "Enter your guess: "
     INPUT userInput;
@@ -50,7 +50,7 @@ WHILE playAgain = true
   }
 
   // Show user game result
-    IF hasWon == trie
+    IF hasWon == true
     {
       OUTPUT "You win! You guessed the correct number in " + attempts + " attempts."
     }

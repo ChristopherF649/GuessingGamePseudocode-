@@ -1,0 +1,51 @@
+
+-- First task: Convert a string to uppercase
+print("Please enter some words: ")
+someWords = io.read()
+print(string.upper(someWords))
+
+-- Second task: Ask for two numbers and print their sum. Check for valid input and handle errors.
+print ("Please enter the first number: ")
+num1 = tonumber(io.read())
+
+while num1 == nil do
+    print("Invalid input. Please enter a valid number: ")
+    num1 = tonumber(io.read())
+end
+
+print ("Please enter the second number: ")
+num2 = tonumber(io.read())
+
+while num2 == nil do
+    print("Invalid input. Please enter a valid number: ")
+    num2 = tonumber(io.read())
+end
+
+local sum = num1 + num2
+print("The sum of " .. num1 .. " and " .. num2 .. " is: " .. sum)
+
+-- Third task: get an unknown amount of numbers from the user, add them together. Handle invalid input.
+print("Please enter numbers (type 'done' when finished): ")
+local total = 0
+local count = 0
+
+while true do
+    local input = io.read()
+    if input == "done" then
+        break
+    end
+
+    local num = tonumber(input)
+    if num == nil then
+        print("Invalid input. Please enter a valid number or 'done': ")
+    else
+        total = total + num
+        count = count + 1
+    end
+end
+
+if count > 0 then
+    print("The sum of all entered numbers is: " .. total)
+else
+    print("No valid numbers were entered.")
+end
