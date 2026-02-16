@@ -1,0 +1,37 @@
+-- By Christopher Flores
+-- Started 2/16/2026 
+-- This program is based on the Guessing Game Homework, where the user will have to guess a random number between 1 and 100.
+-- The program will give feedback on whether the guess is too high, too low, or correct. The user can choose to play again or exit the program.
+
+math.randomseed(os.time()) -- Seed the random number generator
+local playAgain = true
+
+while playAgain do
+    -- Generate a random number between 1 and 100
+    local secretNumber = math.random(1, 100)
+    local userInput = nil
+    local currentAttempts = 0
+    local maxAttempts = 10
+    local hasWon = false
+
+    print ("Welcome to the Guessing Game! I have selected a random number between 1 and 100.")
+    print ("You have " .. maxAttempts .. " attempts to guess the number. Good luck!")
+
+    while currentAttempts < maxAttempts and not hasWon do
+        print ("Please enter your guess: ")
+        userInput = tonumber(io.read())
+        if userInput == nil then
+            print("Invalid input. Please enter a valid number: ")
+        else
+            currentAttempts = currentAttempts + 1
+            if userInput < secretNumber then
+                print("That number is too low! Try again.")
+            elseif userInput > secretNumber then
+                print("That number is too high! Try again.")
+            else
+                print("You got it! You've guessed the number in " .. currentAttempts .. " attempts.")
+                hasWon = true
+            end
+        end
+    end
+end
