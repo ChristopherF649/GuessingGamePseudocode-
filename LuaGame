@@ -34,4 +34,13 @@ while playAgain do
             end
         end
     end
+    if not hasWon then
+        print("You've used all " .. maxAttempts .. " attempts. The correct number was: " .. secretNumber)
+    end
+    print("Would you like to play again? (type yes or no)")
+    local playAgainInput = io.read()
+    if playAgainInput:lower() ~= "yes" then
+        playAgain = false
+        print("Thanks for playing! Exiting the game...")
+    end
 end
