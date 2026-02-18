@@ -7,6 +7,7 @@ math.randomseed(os.time()) -- Seed the random number generator
 local playAgain = true
 
 while playAgain do
+
     -- Generate a random number between 1 and 100
     local secretNumber = math.random(1, 100)
     local userInput = nil
@@ -14,9 +15,11 @@ while playAgain do
     local maxAttempts = 10
     local hasWon = false
 
+    -- Welcome message and instructions
     print ("Welcome to the Guessing Game! I have selected a random number between 1 and 100.")
     print ("You have " .. maxAttempts .. " attempts to guess the number. Good luck!")
 
+    -- Main game loop
     while currentAttempts < maxAttempts and not hasWon do
         print ("Please enter your guess: ")
         userInput = tonumber(io.read())
@@ -34,13 +37,16 @@ while playAgain do
             end
         end
     end
+    -- If the user has not won after using all attempts, show the correct number
     if not hasWon then
         print("You've used all " .. maxAttempts .. " attempts. The correct number was: " .. secretNumber)
     end
+
+    -- Ask the user if they want to play again
     print("Would you like to play again? (type yes or no)")
     local playAgainInput = io.read()
     if playAgainInput:lower() ~= "yes" then
         playAgain = false
-        print("Thanks for playing! Exiting the game...")
+        print("Thanks for playing! \nExiting the game...")
     end
 end
